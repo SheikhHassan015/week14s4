@@ -1,12 +1,12 @@
-name:wf-workflow-pr
+name: wf-workflow-pr
 on:
   pull_request:
     branches:
-      - develop
+     - develop
 jobs:
-   develop-pr-job:
-     runs-on: ubunto-latest
-     steps:
+  develop-pr-job:
+    runs-on: ubunto-latest
+    steps:
       - name: chechout repo
         uses: actions/checkout@v4
       - name: lint HTML and CSS files
@@ -16,4 +16,6 @@ jobs:
       - name: Build Website
         run: 
           npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"    
-          
+
+
+
