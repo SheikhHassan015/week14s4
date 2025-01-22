@@ -5,17 +5,16 @@ on:
      - develop
 jobs:
   develop-pr-job:
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     steps:
       - name: chechout repo
         uses: actions/checkout@v4
       - name: lint HTML and CSS files
-        run:
+        run: |
           npx html hint "**/*.html"
           npx stylelint "**/*.css"
       - name: Build Website
-        run: 
-          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"    
+        run: npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"    
 
 
 
