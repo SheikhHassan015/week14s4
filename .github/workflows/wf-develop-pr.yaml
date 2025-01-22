@@ -2,7 +2,7 @@ name: wf-workflow-pr
 on:
   pull_request:
     branches:
-      - develop
+     - develop
 jobs:
   develop-pr-job:
     runs-on: ubunto-latest
