@@ -8,11 +8,14 @@ jobs:
     runs-on: ubunto-latest
     steps:
       - name: chechout repo
-       uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: lint HTML and CSS files
         run:
-         npx html hint "**/*.html"
-         npx stylelint "**/*.css"
+          npx html hint "**/*.html"
+          npx stylelint "**/*.css"
       - name: Build Website
         run: 
           npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"    
+
+
+
